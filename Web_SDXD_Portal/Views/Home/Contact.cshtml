@@ -1,0 +1,69 @@
+﻿<script>
+    window.onload = function ()
+    {
+        JoinOnClick("ContactUs");
+    }
+
+    function JoinOnClick(strBussinessID) // change content of right parts
+    {
+
+        $('.leftList li a').removeClass('currentA');
+        $("a[name='" + strBussinessID + "']").addClass('currentA');
+        var ContentUrl = "";
+        var DivID = "#Contact_RP"; //div right parts // add by YangDu
+        switch (strBussinessID)
+        {
+            case "OnlineChat":
+                ContentUrl = '@Url.Content("/Contact/Contact_Customer")';
+                break;
+            case "ContactUs":
+                ContentUrl = '@Url.Content("/Contact/ContactUs")';
+                break;
+            case "Contact_Intro":
+                ContentUrl = '@Url.Content("/Contact/Contact_Intro")';
+                break;
+            default:
+                ContentUrl = "" // error
+                break;
+        }
+        $.ajax({
+            url: ContentUrl,
+            type: 'Get',
+            dataType: 'html',
+            //data: {data:"productView"},   //后台 Request["data"] 得到rows.ModelID值
+            success: function (result) {
+                //alert(result);
+                $(DivID).html(result);
+            },
+            error: function () { }//成功回调
+
+        });
+
+    }
+
+    function dynamicLink(ContentUrl)
+    {
+
+    }
+</script>  
+
+
+<div class="bannerArea">
+    <img src="~/Content/images/aboutUs/banner.jpg" alt="" />
+</div> 
+<!--contact start-->
+    <div class="swrapper clearfix content">
+    <!--the same left start-->
+    <div class="left leftContent">
+        <img class="leftBg" src="~/Content/images/aboutUs/leftBg.png" alt="" />
+        <ul class="leftList">
+            <li class="list1"><a href="#">联系信息</a></li>
+            <li class="list2"><a href="#" class="currentA"  name="ContactUs"   onclick="JoinOnClick('ContactUs')">联系我们</a></li>
+            <li class="list2"><a href="#" name="OnlineChat" onclick="JoinOnClick('OnlineChat')">在线留言</a></li>
+        </ul>
+    </div>
+    <!--right content start-->
+    <div id="Contact_RP" class="right rightContent">
+       
+    </div>
+</div>

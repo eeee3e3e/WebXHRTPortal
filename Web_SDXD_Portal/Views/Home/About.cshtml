@@ -1,0 +1,68 @@
+﻿<script>
+    window.onload = function () {
+        var obj = '@ViewBag.id';
+        //alert(obj);
+        if(obj=="")
+        {
+            JoinOnClick("Culture");
+        }
+        else
+        {
+            JoinOnClick(obj);
+        }
+
+    }
+    function JoinOnClick(strBussinessID) // change content of right parts
+    {
+
+        $('.leftList li a').removeClass('currentA');
+        $("a[name='" + strBussinessID + "']").addClass('currentA');
+        var ContentUrl = "";
+        var DivID = "#AboutRP"; //div right parts // add by YangDu
+        switch (strBussinessID) {
+            case "Culture":
+                ContentUrl = '@Url.Content("/AboutUs/Enterprise_Culture")';
+                break;
+            case "Introduction":
+                ContentUrl = '@Url.Content("/AboutUs/Enterprise_Intro")';
+                break;
+            case "Contact_Intro":
+                ContentUrl = '@Url.Content("/Contact/Contact_Intro")';
+                break;
+            default:
+                ContentUrl = "" // error
+                break;
+        }
+        $.ajax({
+            url: ContentUrl,
+            type: 'Get',
+            dataType: 'html',
+            //data: {data:"productView"},   //后台 Request["data"] 得到rows.ModelID值
+            success: function (result) {
+                //alert(result);
+                $(DivID).html(result);
+            },
+            error: function () { }//成功回调
+
+        });
+    }
+</script>  
+
+ <!--banner start-->
+<img src="~/Content/images/aboutUs/banner.jpg" alt="" />
+<!--content start-->
+<div class="swrapper clearfix content">
+    <!--the same left start-->
+    <div class="left leftContent">
+        <img class="leftBg" src="~/Content/images/aboutUs/leftBg.png" alt="" />
+        <ul class="leftList">
+            <li class="list1"><a href="#">关于我们</a></li>
+            <li class="list2"><a href="#" class="currentA" onclick="JoinOnClick('Culture')" name="Culture">企业文化</a></li>
+            <li class="list2"><a href="#" name="Introduction" onclick="JoinOnClick('Introduction')">企业简介</a></li>
+        </ul>
+    </div>
+    <!--right content start-->
+    <div id="AboutRP" class="right rightContent">
+        
+    </div>
+</div>

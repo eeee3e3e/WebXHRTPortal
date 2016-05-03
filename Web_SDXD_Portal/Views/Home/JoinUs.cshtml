@@ -1,0 +1,367 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>加入我们</title>
+    <link rel="stylesheet" type="text/css" href="style/globle.css" />
+    <link rel="stylesheet" type="text/css" href="style/base.css" />
+    <link rel="stylesheet" type="text/css" href="style/public.css" />
+    <link rel="stylesheet" type="text/css" href="style/productgh.css" />
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <!--<script type="text/javascript" src="js/msclass.js"></script>-->
+    <script type="text/javascript" src="js/nav.js"></script>
+    <script type="text/javascript" src="js/DD_belatedPNG.js"></script>
+    <script type="text/javascript" src="js/imgbubbles.js"></script>
+    <!--<script type="text/javascript" src="js/product.js"></script>-->
+
+    <script type="text/javascript">
+ 
+    DD_belatedPNG.fix('.sep img,.logo'); 
+	jQuery(document).ready(function($){
+		$('ul#orbs').imgbubbles({factor:1.25,speed:1000}) //add bubbles effect to UL id="orbs"
+})
+    </script>
+    <style id="huaban_Style">
+        #huaban_Container {
+            font-family: 'helvetica neue', arial, sans-serif;
+            position: absolute;
+            padding-top: 37px;
+            z-index: 100000002;
+            top: 0;
+            left: 0;
+            background-color: transparent;
+            opacity: 1;
+            hasLayout: -1;
+        }
+
+        #huaban_Overlay {
+            position: fixed;
+            z-index: 100000001;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background-color: #f2f2f2;
+            opacity: .95;
+        }
+
+        * html #huaban_Overlay {
+            position: absolute;
+        }
+
+        #huaban_Control {
+            position: relative;
+            z-index: 100000;
+            float: left;
+            background-color: #fcf9f9;
+            border: solid #ccc;
+            border-width: 0 1px 1px 0;
+            height: 200px;
+            width: 200px;
+            opacity: 1;
+        }
+
+        * html #huaban_Control {
+            position: static;
+        }
+
+            #huaban_Control img {
+                position: relative;
+                padding: 0;
+                display: block;
+                margin: 82px auto 0;
+                -ms-interpolation-mode: bicubic;
+            }
+
+            #huaban_Control a {
+                position: fixed;
+                z-index: 10001;
+                right: 0;
+                top: 0;
+                left: 0;
+                height: 24px;
+                padding: 12px 0 0;
+                text-align: center;
+                font-size: 14px;
+                line-height: 1em;
+                text-shadow: 0 1px #fff;
+                color: #211922;
+                font-weight: bold;
+                text-decoration: none;
+                background: #fff url(http://huaban.com/img/fullGradient07Normal.png) 0 0 repeat-x;
+                border-bottom: 1px solid #ccc;
+                -mox-box-shadow: 0 0 2px #d7d7d7;
+                -webkit-box-shadow: 0 0 2px #d7d7d7;
+            }
+
+            * html #huaban_Control a {
+                position: absolute;
+                width: 100%;
+            }
+
+                #huaban_Control a:hover {
+                    color: #fff;
+                    text-decoration: none;
+                    background-color: #1389e5;
+                    border-color: #1389e5;
+                    text-shadow: 0 -1px #46A0E6;
+                }
+
+                #huaban_Control a:active {
+                    height: 23px;
+                    padding-top: 13px;
+                    background-color: #211922;
+                    border-color: #211922;
+                    background-image: url(http://huaban.com/img/fullGradient07Inverted.png);
+                    text-shadow: 0 -1px #211922;
+                }
+
+        .huabanImagePreview {
+            position: relative;
+            padding: 0;
+            margin: 0;
+            float: left;
+            background-color: #fff;
+            border: solid #e7e7e7;
+            border-width: 0 1px 1px 0;
+            height: 200px;
+            width: 200px;
+            opacity: 1;
+            z-index: 10002;
+            text-align: center;
+            overflow: hidden;
+        }
+
+            .huabanImagePreview .huabanVideoIcon {
+                position: absolute;
+                display: block;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: url(http://huaban.com/img/media_video.png) center center no-repeat;
+            }
+
+            .huabanImagePreview .huabanImg {
+                border: none;
+                height: 200px;
+                width: 200px;
+                opacity: 1;
+                padding: 0;
+            }
+
+                .huabanImagePreview .huabanImg a {
+                    margin: 0;
+                    padding: 0;
+                    position: absolute;
+                    top: 0;
+                    bottom: 0;
+                    right: 0;
+                    left: 0;
+                    display: block;
+                    text-align: center;
+                    z-index: 1;
+                }
+
+                    .huabanImagePreview .huabanImg a:hover {
+                        background-color: #fcf9f9;
+                        border: none;
+                    }
+
+                .huabanImagePreview .huabanImg .ImageToPin {
+                    max-height: 200px;
+                    max-width: 200px;
+                    width: auto !important;
+                    height: auto !important;
+                }
+
+            .huabanImagePreview img.huaban_PinIt {
+                border: none;
+                position: absolute;
+                top: 82px;
+                left: 42px;
+                display: none;
+                padding: 0;
+                background-color: transparent;
+                z-index: 100;
+            }
+
+            .huabanImagePreview img.huaban_vidind {
+                border: none;
+                position: absolute;
+                top: 75px;
+                left: 75px;
+                padding: 0;
+                background-color: transparent;
+                z-index: 99;
+            }
+
+        .huabanDimensions {
+            color: #000;
+            position: relative;
+            margin-top: 180px;
+            text-align: center;
+            font-size: 10px;
+            z-index: 10003;
+            display: inline-block;
+            background: white;
+            border-radius: 4px;
+            padding: 0 2px;
+        }
+
+        #huaban_Button {
+            display: block;
+            position: absolute;
+            z-index: 999999999;
+            color: #211922;
+            background-color: #fff;
+            text-shadow: 0 1px #eaeaea;
+            border-radius: 5px;
+            box-shadow: 0 0 2px #555;
+            font: 12px/1 'Helvetica Neue',Helvetica,Arial,Sans-serif;
+            text-align: center;
+            padding: 5px 18px;
+            cursor: pointer;
+            border: 1px solid #555\9;
+        }
+
+            #huaban_Button:hover {
+                background-image: -webkit-linear-gradient(top, #fefeff, #efefef);
+                background-image: -moz-linear-gradient(top, #fefeff, #efefef);
+            }
+
+            #huaban_Button.huaban_Button_share {
+                text-indent: -9999px;
+                width: 86px;
+                height: 24px;
+                padding: 0;
+                background: url(http://huaban.com/img/sharebutton.png) no-repeat;
+                background: url(http://huaban.com/img/sharebutton.png) no-repeat !important;
+            }
+    </style>
+</head>
+<body>
+   
+    <!--banner start-->
+    <img src="~/Content/images/product/banner.jpg" alt="" />
+    <!--content start-->
+    <div class="swrapper clearfix content">
+        <!--the same left start-->
+        <div class="left leftContent">
+            <img class="leftBg" src="~/Content/images/aboutUs/leftBg.png" alt="" />
+            <ul class="leftList">
+                <li class="list1"><a href="news.html">加入我们</a></li>
+                <li class="list2"><a class="currentA" href="news.html">招聘信息</a></li>
+                <li class="list2"><a href="#2"></a></li>
+            </ul>
+        </div>
+        <!--right content start-->
+        <div class="right rightContent">
+            <div class=" clearfix rightTitle">
+                <h2 class="left">加入我们 JOIN US</h2>
+                <div class="right location">你现在的位置是： <a class="gold" href="index.html">首页</a> > <a class="gold" href="news.html">加入我们</a> > <span class="lightGrey">招聘信息</span></div>
+            </div>
+            <ul class="rightInfor">
+                <li class="clearfix">
+                    <span class=" left">
+                        技术岗位工作职责：
+                    </span>
+                </li>
+                <li class="clearfix">
+                    <span class=" left">
+                        &nbsp;&nbsp;1.技术部岗位工作职责
+                    </span>
+                </li>
+                <li class="clearfix">
+                    <span class=" left">
+                        &nbsp;&nbsp;2.负责工程技术的指导、检查和监督。
+                    </span>
+                </li>
+                <li class="clearfix">
+                    <span class=" left">
+                        &nbsp;&nbsp;3.负责项目部范围内技术文件和资料的统一管理。
+                    </span>
+                </li>
+                <li class="clearfix">
+                    <span class=" left">
+                        &nbsp;&nbsp;4.负责编制项目工程施工的组织设计、质量控制计划及特殊过程和关键过程的施工方案、技术措施。
+                    </span>
+                </li>
+                <li class="clearfix">
+                    <span class=" left">
+                        &nbsp;&nbsp;5.负责施工图纸的设计、会审，在施工中对各工序进行书面技术交底。参加各工序的检验和工程验收。对工程的每一个分部分项工程进行检查和评定记录。
+                    </span>
+                </li>
+                <li class="clearfix">
+                    <span class=" left">
+                        &nbsp;&nbsp;6.负责维护公司内部网络与电脑的正常使用。
+                    </span>
+                </li>
+                <li class="clearfix">
+                    <span class=" left">
+                        &nbsp;&nbsp;7.负责协助总经理办理其他相关事宜。
+                    </span>
+                </li>
+                <li class="clearfix">
+                    <span class=" left">
+                        &nbsp;&nbsp;
+                    </span>
+                </li>
+                <li class="clearfix">
+                    <span class=" left">
+                        岗位要求:
+                    </span>
+                </li>
+                <li class="clearfix">
+                    <span class=" left">
+                        &nbsp;&nbsp;1.计算机相关专业，本科以上学历
+                    </span>
+                </li>
+                <li class="clearfix">
+                    <span class=" left">
+                        &nbsp;&nbsp;2.具有IT基础设施系统运行维护经验和项目管理经验；
+                    </span>
+                </li>
+                <li class="clearfix">
+                    <span class=" left">
+                        &nbsp;&nbsp;3.熟练相关软件，开发工具, 技术框架, 应用服务器，数据库等技术的应用
+                    </span>
+                </li>
+                <li class="clearfix">
+                    <span class=" left">
+                        &nbsp;&nbsp;4.善于交流，勇于技术革新和创新，具有团队协作和敬业精神；具有较强的工作责任心和事业心。
+                    </span>
+                </li>
+                <li class="clearfix">
+                    <span class=" left">
+                        &nbsp;&nbsp;
+                    </span>
+                </li>
+                <li class="clearfix">
+                    <span class=" left">
+                        &nbsp;&nbsp;如有意向投递简历至:&nbsp;&nbsp;shidaixinda@yeah.net
+                    </span>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!--foot start
+    <div class="foot">
+        <div class="subNav">
+            <a href="index.html">首页</a>
+            -
+            <a href="product.html">产品介绍</a>
+            -
+            <a href="aboutUsjl.html">企业简介</a>
+            -
+            <a href="aboutUs.html">企业文化</a>
+            -
+            <a href="contact.html">联系我们</a>
+            -
+            <a href="news.html">加入我们</a>
+        </div>
+        <div class="deepGrey">北京时代科技有限公司 呼叫中心：010-88145667 E-Mail：shidaixinda@yeah.net</div>
+        <div class="deepGrey">版权所有 北京时代科技有限公司 ICP备案号：冀ICP备案1101110（1/3）4号 </div>
+    </div>
+</body>
+</html>-->

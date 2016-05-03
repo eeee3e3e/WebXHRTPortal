@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Root>
+  <Data>
+    <Product>
+      <ID>IDC</ID>
+      <ImageUrl>IDC.png</ImageUrl>
+      <WebUrl>IDC.html</WebUrl>
+    </Product>
+
+    <Product>
+      <ID>DirectLine</ID>
+      <ImageUrl>network.png</ImageUrl>
+      <WebUrl>productzx.html</WebUrl>
+        <SubProduct>
+          <ID>InteratDirectLine</ID>
+          <ImageUrl>hlwjr.png</ImageUrl>
+          <WebUrl>InNet.html</WebUrl>
+        </SubProduct>
+      
+        <SubProduct>
+          <ID>InternatExtraValue</ID>
+          <ImageUrl>hlw.png</ImageUrl>
+          <WebUrl>jyhlwzz.html</WebUrl>
+        </SubProduct>
+      
+        <SubProduct>
+          <ID>VideoConference</ID>
+          <ImageUrl>ytw.png</ImageUrl>
+          <WebUrl>VideoConferencing.html</WebUrl>
+        </SubProduct>
+    </Product>
+  </Data>
+  
+  <Voice>
+    <Product>
+      <ID>Business4008</ID>
+      <ImageUrl>Telephone1.png</ImageUrl>
+      <WebUrl>Telephone4008.html</WebUrl>
+    </Product>
+
+    
+    <Product>
+      <ID>BD30</ID>
+      <ImageUrl>Telephone2.png</ImageUrl>
+      <WebUrl>Telephone30b.html</WebUrl>
+    </Product>
+
+    <Product>
+      <ID>YunXinTong</ID>
+      <ImageUrl>yxt.png</ImageUrl>
+      <WebUrl>yunxintong.html</WebUrl>
+    </Product>
+
+    <Product>
+      <ID>RemoteTelephone</ID>
+      <ImageUrl>wudh.png</ImageUrl>
+      <WebUrl>wusheng.html</WebUrl>
+    </Product>
+  </Voice>
+  
+  <Management>
+    <Product>
+      <ID>CloudService</ID>
+      <ImageUrl>CLOUDSERVING.png</ImageUrl>
+      <WebUrl>CloudServing.html</WebUrl>
+    </Product>
+
+    <Product>
+      <ID>ElectronicSign</ID>
+      <ImageUrl>qianming.png</ImageUrl>
+      <WebUrl>wzhgt.html</WebUrl>
+    </Product>
+  </Management>
+  
+</Root>
+
+

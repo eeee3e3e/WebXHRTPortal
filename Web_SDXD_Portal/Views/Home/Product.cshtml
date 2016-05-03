@@ -1,0 +1,68 @@
+﻿<script>
+    window.onload = function () {
+        var obj = '@ViewBag.id';
+        //alert(obj);
+        if (obj == "") {
+            JoinOnClick("Data");
+        }
+        else {
+            JoinOnClick(obj);
+        }
+
+    }
+    function JoinOnClick(strBussinessID) // change content of right parts
+    {
+        
+        $('.leftList li a').removeClass('currentA');
+        $("a[name='" + strBussinessID + "']").addClass('currentA');
+        var ContentUrl = "";
+        var DivID = "#Product_RP"; //div right parts // add by YangDu
+        switch (strBussinessID)
+        {
+            case "Data":
+                ContentUrl = '@Url.Content("/Product/Product_Data")';
+                break;
+            case "Voice":
+                ContentUrl = '@Url.Content("/Product/Product_Voice")';
+                break;
+            case "Management":
+                ContentUrl = '@Url.Content("/Product/Product_Management")';
+                break;
+            default:
+                ContentUrl = "" // error
+                break;
+        }
+        $.ajax({
+            url: ContentUrl,
+            type: 'Get',
+            dataType: 'html',
+            //data: {data:"productView"},   //后台 Request["data"] 得到rows.ModelID值
+            success: function (result)
+            {
+                //alert(result);
+                $(DivID).html(result);
+            },
+            error:function(){}//成功回调
+
+        });
+    }
+</script>  
+ <!--banner start-->
+<img src="~/Content/images/product/banner.jpg" alt="" />
+<!--content start-->
+<div class="swrapper clearfix content">
+    <!--the same left start-->
+    <div class="left leftContent">
+        <img class="leftBg" src="~/Content/images/aboutUs/leftBg.png" alt="" />
+        <ul class="leftList">
+            <li class="list1" ><a href="#">产品介绍</a></li>
+            <li class="list2"><a class="currentA" name="Data" href="#" onclick="JoinOnClick('Data')">数据业务</a></li>
+            <li class="list2"><a href="#" name="Voice" onclick="JoinOnClick('Voice')">语音业务</a></li>
+            <li class="list2"><a href="#" name="Management" onclick="JoinOnClick('Management')">管理软件</a></li>
+        </ul>
+    </div>
+    <!--right content start-->
+    <div id="Product_RP"  class="right rightContent">
+            <!-- Html.ActionLink("Product_Data", "Product_Data","Product")-->
+    </div>
+</div>

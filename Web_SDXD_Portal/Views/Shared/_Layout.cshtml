@@ -1,0 +1,133 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - 北京时代信达科技有限公司</title>
+    
+    <link rel="stylesheet" type="text/css" href="~/Content/style/globle.css" />
+    <link rel="stylesheet" type="text/css" href="~/Content/style/base.css" />
+    <link rel="stylesheet" type="text/css" href="~/Content/style/index.css" />
+    <link rel="stylesheet" type="text/css" href="~/Content/style/contact.css" />
+    <link rel="stylesheet" type="text/css" href="~/Content/style/public.css" />
+    <link rel="stylesheet" type="text/css" href="~/Content/style/about.css" />
+    <link rel="stylesheet" type="text/css" href="~/Content/style/product.css" />
+    <script type="text/javascript" src="~/js/jquery.js"></script>
+    <script type="text/javascript" src="~/js/msclass.js"></script>
+    <script type="text/javascript" src="~/js/jquery.cycle.js"></script>
+    <script type="text/javascript" src="~/js/jquery.watermarkinput.js"></script>
+    <script type="text/javascript" src="~/js/slideshow.js"></script>
+    <script type="text/javascript" src="~/js/jquery.cycle.js"></script>
+    <script type="text/javascript" src="~/js/nav.js"></script>
+    <script type="text/javascript" src="~/js/index.js"></script>
+    <script type="text/javascript" src="~/js/DD_belatedPNG.js"></script>
+    <!-- The head of web page add by YangDu 0420 -->
+    <script type="text/javascript" src="~/js/P_Master.js" ></script>
+    <script type="text/javascript" src="~/js/imgbubbles.js"></script>
+    <script type="text/javascript">
+ 
+  DD_belatedPNG.fix('.sep img,.logo,.shareMain'); 
+    </script>
+    <script language="javascript">
+	$(function(){
+		$(".bor1").Watermark("大家都在搜：凤鸟");
+
+		$('#banner').cycle({
+			fx:'scrollLeft',
+			pager:'#btn'
+		})
+	});
+
+            $(function ()
+            {
+                $("li[name='naviItem']").removeClass("active left");
+
+                $("li[name='naviItem']").click
+                (function ()
+                {
+                    $(this).addClass("active left");
+                }
+            )
+        
+            }
+        )
+            function LinkDirect(linkAddress,linkName)
+            {
+
+                window.location.href = linkAddress;
+                
+            }
+
+    </script>
+    <script type="text/javascript">
+ 
+    DD_belatedPNG.fix('.sep img,.logo'); 
+	jQuery(document).ready(function($){
+		$('ul#orbs').imgbubbles({factor:1.25,speed:1000}) //add bubbles effect to UL id="orbs"
+})
+    </script>
+    <!--
+    @Styles.Render("~/style/css")
+    
+    @Styles.Render("~/js/js")
+
+    @Scripts.Render("~/bundles/modernizr")
+    -->
+    <script>
+     DD_belatedPNG.fix('.sep img,.logo,.shareMain');  
+    </script>
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=1.2"></script>
+
+</head>
+<body>
+    <!--head start-->
+    <div class="header">
+        <div class="wrapper head">
+            <div class="language clearfix">
+                <a href="#2">中文</a>&nbsp;|&nbsp;<a href="#2">English</a>
+            </div>
+            <div>
+                <h1 class="left"><a class="logo" href="/home/index"></a></h1>
+                <div id="nav" class="clearfix right">
+                    <ul>
+                        <li id="naviItem_FPage" name="naviItem" class="left"><a href="/home/index">首&nbsp;页<span>HOME</span></a></li>
+                        <li class="left sep"><img src="~/Content/images/sep.png" alt="" /></li>
+                        <li id="naviItem_About" name="naviItem" class="left"><a href="/home/About">关于我们<span>ABOUT US</span></a></li>
+                        <li class="left sep"><img src="~/Content/images/sep.png" alt="" /></li>
+                        <li id="naviItem_Product" name="naviItem" class="left"><a href="/home/Product">产品展示<span>PRODUCTS</span></a></a></li>
+                        <li class="left sep"><img src="~/Content/images/sep.png" alt="" /></li>
+                        <li id="naviItem_Join" name="naviItem" class="left"><a href="/home/JoinUs">加入我们<span>JOIN US</span></a></a></li>
+                        <li class="left sep"><img src="~/Content/images/sep.png" alt="" /></li>
+                        <li id="naviItem_Contact" name="naviItem" class="left"><a href="/home/Contact">联系我们<span>CONTACT US</span></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--<div class="container body-content">-->
+        @RenderBody()
+        <footer>
+            <div class="foot">
+                <div class="subNav">
+                    <a href="#" onclick="LinkDirect('/home/index','index')">首页</a>
+                    -
+                    <a href="#" onclick="LinkDirect('/Home/About/Culture', 'Culture')" >企业文化</a>
+                    -
+                    <a href="#" onclick="LinkDirect('/Home/About/Introduction', 'Introduction')">企业简介</a>
+                    -
+                    <a href="/Home/Contact">联系我们</a>
+                    -
+                    <a href="/Home/JoinUs">加入我们</a>
+                </div>
+                <div class="deepGrey">北京时代科技有限公司 呼叫中心：010-88145667 E-Mail：shidaixinda@yeah.net</div>
+                <div class="deepGrey">版权所有 北京时代科技有限公司 ICP备案号：冀ICP备案1101110（1/3）4号 </div>
+            </div>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

@@ -1,27 +1,108 @@
-﻿<div class="clearfix rightTitle">
+﻿<script type="text/javascript" src="~/js/jquery.js"></script>
+<script src="~/Shared/javascript/XmlOp.js"></script>
+<script>
+    //productName-directline
+    //xmlFilePath- d：/
+    //RootNode- root
+    // strField- ID (input)
+    //likRequiredField (output)
+    function productDisplay(productName, xmlFilePath, RootNode,linkRequiredField)//
+    {
+        //acquire product name from xml file according to strField.
+        var ProductObj = getPath(productName, xmlFilePath, RootNode)[2];
+        //get request field value. such as a path..
+        var strFieldInfo = LinkDirect(productName, linkRequiredField, xmlFilePath);
+
+    }
+
+    //acquire node value according to field name;
+    //field name: eg-ImgUrl..
+    function getNodeValue(nodeObj,fieldname)
+    {
+        var returnValue = Array();
+        while (nodeObj != null || typeof (nodeObj) != "undefined")
+        {
+            if (nodeObj.nodeName == fieldname) {
+                returnValue["nodeObj"] = nodeObj;
+                returnValue["nodeText"] = nodeObj.nodeTypedValue;
+                break;
+            }
+            else {
+                nodeObj = nodeObj.nextSibling;
+            }
+        }
+        return returnValue;
+
+    }
+    //input the html content into a div element or other containers
+    function MakeHtml(productName,xmlFilePath,RootNode)
+    {
+        var strHtml = "";
+        var strImgPath = "";
+        strHtml += "<ul id=\"orbs\" class=\"bubblewrap clearfix\">";
+        
+        var ProductObj = getPath(productName, xmlFilePath, RootNode)[2];
+        //the childNode is stored in the subItem label, tracking the SubItem array to retrive its child nodes.
+        var SubProductObj = getNodeValue(ProductObj.childNodes[0], "SubItems")["nodeObj"];
+        for (var iCount = 0; iCount < SubProductObj.childNodes.length; iCount++)
+        {
+            if (SubProductObj.childNodes[iCount].nodeType != 3) {
+                nodeObj = SubProductObj.childNodes[iCount].childNodes[0];
+                //1.Formating
+                //strImgPath = nodeObj.ImageUrl; //image url
+                strHtml += "<li>";
+                strHtml += "<a href='#'>";
+                strHtml += "<img style='z-index: 999; left: 0px; top: 0px; display: block;'";
+                strHtml += "src='/" + getNodeValue(nodeObj, "ImageUrl")["nodeText"] + "' alt=\"\" onclick=\"MakeHtml(\'" + getNodeValue(nodeObj, "Name")["nodeText"] + "\', \'/Shared/xml/xmlPath.xml\', \'首页\')\">";
+                strHtml += "</a>"
+                strHtml += "<div class=\"tooltip\" style=\"z-index: 999; text-align:center;  left: -24.5px; top: -56.5px; padding-top:60px;\">";
+                strHtml += "<a href=\"#\" ";
+               // strHtml += getNodeValue(nodeObj, "WebUrl")["nodeText"];  //web html url
+                strHtml += "\">" + getNodeValue(nodeObj, "Name")["nodeText"] + "</div>";
+                /*<div class="tooltip" style="z-index: 999; text-align:center;  left: -24.5px; top: -56.5px; padding-top:60px;">
+                    <a href="productzx.html">专线业务</a>
+                </div>*/
+            }
+            else  //if (SubProductObj.childNodes[iCount].nodeType == 3)  the node is leaf node
+            {
+                fso = new ActiveXObject("Scripting.FileSystemObject");
+                ts = fso.OpenTextFile("d:\\testfile.txt", ForReading);
+                s = ts.ReadAll();
+                strHtml = s;
+            }
+        }
+        document.getElementById("div_Product").innerHTML = strHtml;
+       
+    }
+
+</script>
+<div class="clearfix rightTitle">
     <h2 class="left">产品介绍 PRODUCTS</h2>
     <div class="right location">你现在的位置是： <a class="gold" href="index.html">首页</a> > <a class="gold" href="product.html">产品介绍</a> > <span class="lightGrey">数据业务</span></div>
 </div>
-<ul id="orbs" class="bubblewrap clearfix">
+<div id="div_Product">
+    <ul id="orbs" class="bubblewrap clearfix">
 
-    <!--		<li><a href="InNet.html"><img style="z-index: 999; left: 0px; top: 0px; display: block;" src="images/product/Internet/
-    hlwjr.png" alt=""></a><div class="tooltip" style="z-index: 999; text-align:center;  left: -24.5px; top: -56.5px; padding-top:60px;"><a href="InNet.html">互联网接入</a></div></li>
-
-            <li><a href="Telephone30b.html"><img style="z-index: 999; left: 0px; top: 0px; display: block;" src="images/product/gh/
-    hlw.png" alt=""></a><div class="tooltip" style="z-index: 999; text-align:center;  left: -24.5px; top: -56.5px; padding-top:60px;"><a href="Telephone30b.html">基于互联网增值业务</a></div></li>
-
-                        <li><a href="VideoConferencing.html"><img style="z-index: 999; left: 0px; top: 0px; display: block;" src="images/product/Internet/
-    ytw.png" alt=""></a><div class="tooltip" style="z-index: 999; text-align:center;  left: -24.5px; top: -56.5px; padding-top:60px;"><a href="VideoConferencing.html">以太网</a></div></li>-->
-
-    <li>
-        <a href="productzx.html">
-            <img style="z-index: 999; left: 0px; top: 0px; display: block;" src="~/Content/images/product/Internet/
-network.png" alt="">
-        </a><div class="tooltip" style="z-index: 999; text-align:center;  left: -24.5px; top: -56.5px; padding-top:60px;"><a href="productzx.html">专线业务</a></div>
-    </li>
+        <li>
+            <a href="#">
+                <img style="z-index: 999; left: 0px; top: 0px; display: block;" src="~/Content/images/product/Internet/network.png"
+                      alt="" onclick="MakeHtml('互联网专线', '/Shared/xml/xmlPath.xml', '首页')">
+            </a>
+            <div class="tooltip" style="z-index: 999; text-align:center;  left: -24.5px; top: -56.5px; padding-top:60px;">
+                <a href="#">专线业务</a>
+            </div>
+        </li>
 
 
 
-    <li><a href="IDC.html"><img style="z-index: 999; left: 0px; top: 0px; display: block;" src="~/Content/images/product/IDC/IDC.png" alt=""></a><div class="tooltip" style="z-index: 999; text-align:center;  left: -24.5px; top: -56.5px; padding-top:60px;"><a href="IDC.html">IDC业务</a></div></li>
-
-
+        <li>
+            <a href="IDC.html">
+                <img style="z-index: 999; left: 0px; top: 0px; display: block;" src="~/Content/images/product/IDC/IDC.png" alt="">
+            </a>
+            <div class="tooltip" style="z-index: 999; text-align:center;  left: -24.5px; top: -56.5px; padding-top:60px;">
+                <a href="IDC.html">IDC业务</a>
+            </div>
+            <input id="txt_test" type="text" value="" />
+        </li>
+    </ul>
+</div>

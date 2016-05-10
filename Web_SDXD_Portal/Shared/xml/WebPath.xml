@@ -3,8 +3,10 @@
   <Data>
     <Product>
       <ID>IDC</ID>
+      <Name>IDC业务</Name>
       <ImageUrl>IDC.png</ImageUrl>
       <WebUrl>IDC.html</WebUrl>
+      <ActionUrl></ActionUrl>
     </Product>
 
     <Product>

@@ -25,8 +25,9 @@
     <!-- The head of web page add by YangDu 0420 -->
     <script type="text/javascript" src="~/js/P_Master.js" ></script>
     <script type="text/javascript" src="~/js/imgbubbles.js"></script>
+    <script type="text/javascript" src="~/Shared/javascript/XmlOp.js"></script>
     <script type="text/javascript">
- 
+    
   DD_belatedPNG.fix('.sep img,.logo,.shareMain'); 
     </script>
     <script language="javascript">
@@ -57,6 +58,27 @@
 
                 window.location.href = linkAddress;
                 
+            }
+            
+            //search for the web link addr according to linkID
+            //linkAddrID is keyword such as Business4008,VideoConference
+        //linkRequiredField includes 3 fields: ID,ImageUrl and WebUrl
+        //xmlFile is the path of xmlfile;
+            function LinkDirect(linkAddrID,linkRequiredField,xmlFile)
+            {
+                var NodeObj = new Object();
+                NodeObj = getPath(linkAddrID, xmlFile, "Root", linkRequiredField);
+                for (var i = 0; i < NodeObj[2].parentNode.childNodes.length; i++) {
+                    if (NodeObj[2].parentNode.childNodes[i].nodeName == linkRequiredField) {
+                        return NodeObj[2].parentNode.childNodes[i].nodeTypedValue;
+                    }
+
+                    else
+                    {
+                        continue;
+                    }
+                }
+
             }
 
     </script>

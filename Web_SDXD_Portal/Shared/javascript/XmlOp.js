@@ -1,10 +1,6 @@
 ﻿var strPath = "";// page variable of xml path;
 var strStatus = "0"; //search status  0 - result not found |  1 - result found
-var objNode = new Object();
-var returnValue = new Array(3);
-returnValue[0] = strPath;
-returnValue[1] = strStatus;
-returnValue[2] = objNode;
+
 //Create path as name1-name2-name3-name4
 //objNode - currentNode (if there is a currentNode , then find its parentNode and create the full path until root node)
 //strPath - 
@@ -14,7 +10,7 @@ function PathMaker(objNode, strPath, tagName) {
     var strPath = "";
     var strPathArray = new Array();
     //&&RootNode.childNodes[0].nodeType!=3
-    while (objNode.parentNode.nodeName != "Root") {
+    while (objNode.parentNode.nodeName != "首页") {
         strPathArray.push(objNode.parentNode.nodeName);
         objNode = objNode.parentNode;
     }
@@ -32,9 +28,11 @@ function getChildNodes(ObjChildNode) {
     return ObjChildNode.childNodes;
 }
 
+/*
+//returnValue: [1].Path [2].Status [3].Node Object
 function getPath(linkID, xmlFilePath, RootNode, strField) {
     //var strPath="";
-    if (RootNode == "Root") {
+    if (RootNode == "首页") {
         strPath = RootNode;
         //load xml files
         var xmlObj = loadXMLDoc(xmlFilePath);
@@ -111,6 +109,110 @@ function getPath(linkID, xmlFilePath, RootNode, strField) {
                     }
                     else {
                         returnValue = getPath(linkID, xmlFilePath, childNodes[iNum], strField);
+                    }
+                }
+            }
+        }
+        else  // if the node is the final leaf node
+        {
+            returnValue[0] = strPath;//{strPath,"0"};
+            returnValue[1] = "0";
+            returnValue[2] = null;
+            return returnValue;
+        }
+
+    }
+    return returnValue;
+}
+
+*/
+//returnValue: [1].Path [2].Status [3].Node Object
+function getPath(linkID, xmlFilePath, RootNode)
+{
+    var objNode = new Object();
+    var returnValue = new Array(3);
+    returnValue[0] = strPath;
+    returnValue[1] = strStatus;
+    returnValue[2] = objNode;
+
+    //var strPath="";
+    if (RootNode == "首页") {
+        strPath = RootNode;
+        //load xml files
+        var xmlObj = loadXMLDoc(xmlFilePath);
+        //get child node from current node
+        if (RootNode == null) {
+            return false;
+        }
+        else {
+            try {
+                var childNodes = getChildNodes(xmlObj.getElementsByTagName(RootNode)[0]);
+            }
+            catch (err) {
+                alert(err.message);
+            }
+            //typeof(reValue) == "undefined"
+
+            //traverse child nodes;
+
+
+            for (var iNum = 0; iNum < childNodes.length; iNum++) {
+                if (childNodes[iNum].nodeName == linkID) {
+                    strPath = PathMaker(childNodes[iNum], strPath, "");
+                    returnValue[0] = strPath; //{strPath,"1"};
+                    returnValue[1] = "1"; // result is existed
+                    returnValue[2] = childNodes[iNum];  //input node object
+                    break;
+                }
+                else {
+                    if (returnValue[1] == "1") {
+                        break;
+                    }
+                    else {
+                        returnValue = getPath(linkID, xmlFilePath, childNodes[iNum]);
+                    }
+                }
+            }
+        }
+
+        ////search for specific products/services and return objects&nodes (an array)
+        //var objects = xml.getElementByTagName(linkID);
+        ////search node which contain the key value (linkID)
+        //for (var iNum = 0; iNum < object.length; iNum++) //
+        //{
+        //    if (object[iNum].getElementByTagName(""));
+        //}
+    }
+    else {
+        //typeof(childNodes)=="undefined")
+        //alert(RootNode.childNodes[0].nodeType);
+        if (RootNode.hasChildNodes() && RootNode.childNodes[0].nodeType != 3)  // if current node is not the leaf node
+        {
+            strPath = RootNode.nodeName;
+            try {
+                var childNodes = getChildNodes(RootNode);
+            }
+            catch (err) {
+                alert(err.message);
+                return false; //deal with exception.
+            }
+
+
+
+            for (var iNum = 0; iNum < childNodes.length; iNum++) {
+                if (childNodes[iNum].nodeName == linkID) {
+                    strPath = PathMaker(childNodes[iNum], strPath, "");
+                    returnValue[0] = strPath;//{strPath,"1"};
+                    returnValue[1] = "1";
+                    returnValue[2] = childNodes[iNum];  //input node object
+                    break;
+                }
+                else {
+                    if (returnValue[1] == "1") {
+                        break;
+                    }
+                    else {
+                        returnValue = getPath(linkID, xmlFilePath, childNodes[iNum]);
                     }
                 }
             }

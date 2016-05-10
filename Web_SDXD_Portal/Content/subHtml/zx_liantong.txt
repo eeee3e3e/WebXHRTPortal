@@ -1,0 +1,48 @@
+﻿<ul class="rightInfor">
+                             <li class="clearfix">
+                                    <span class=" left">产品定义：
+                                    </span>
+                                </li>
+                           <li class="clearfix">
+                                    <span class=" left">&nbsp;&nbsp;
+                                    互联网专线是基于CHINA169本地网，采用最新的宽带接入技术，为客户提供从 64Kbps到GE级的多种速率实时在线的互联网接入产品，包括黄金、紫金、楼宇专线三类产品，其中，黄金产品主要面向中、高端客户，紫金产品面向价格敏 感客户及反抢客户，楼宇专线面向商务楼宇中的中小企业客户。
+                                    </span>
+                                </li>
+                <li class="clearfix">
+                                    <span class=" left">产品功能:
+                                    </span>
+                                </li>
+                                <li class="clearfix">
+                                    <span class=" left">&nbsp;&nbsp;实现用户高速接入互联网的功能。
+                                    </span>
+                                </li>
+                                <li class="clearfix">
+                                    <span class=" left">产品特点:
+                                    </span>
+                                </li>
+                                 <li class="clearfix">
+                                    <span class=" left">&nbsp;&nbsp;专线接入稳定、可靠；无需认证，实时在线；可获得固定IP地址；支持从64Kbps到GE的多种速率选择；支持多终端的客户接入。
+                                    </span>
+                                </li>
+                                 <li class="clearfix">
+                                    <span class=" left">产品种类:
+                                    </span>
+                                </li>
+                                 <li class="clearfix">
+                                    <span class=" left">&nbsp;&nbsp;1、黄金产品&nbsp;&nbsp;2、紫金产品&nbsp;&nbsp;3、楼宇专线。
+                                    </span>
+                                </li>
+                                 <li class="clearfix">
+                                    <span class=" left">&nbsp;&nbsp;
+                                    </span>
+                                </li>
+                                 <li class="clearfix">
+                                    <span class=" left">&nbsp;&nbsp;如果您想了解更多内容或有意向办理业务请联系我们的销售。
+                                    </span>
+                                </li>
+                                 <li class="clearfix">
+                                    <span class=" left">&nbsp;&nbsp;销售电话：
+                                    </span>
+                                </li>
+                                
+                            </ul>

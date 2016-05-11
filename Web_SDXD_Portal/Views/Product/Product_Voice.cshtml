@@ -1,30 +1,35 @@
-﻿<div class="clearfix rightTitle">
+﻿<script type="text/javascript" src="~/js/jquery.js"></script>
+<script type="text/javascript" src="~/Shared/javascript/XmlOp.js"></script>
+
+<div class="clearfix rightTitle">
     <h2 class="left">产品介绍 PRODUCTS</h2>
-    <div class="right location">你现在的位置是： <a class="gold" href="index.html">首页</a> > <a class="gold" href="product.html">产品介绍</a> > <span class="lightGrey">语音业务</span></div>
+    <div id="div_CurrentLocation" class="right location">你现在的位置是： <a class="gold" href="index.html">首页</a> > <a class="gold" href="product.html">产品介绍</a> > <span class="lightGrey">语音业务</span></div>
 </div>
-<ul id="orbs" class="bubblewrap clearfix">
-    <li>
-        <a href="Telephone4008.html">
-            <img style="z-index: 999; left: 0px; top: 0px; display: block;" src="~/Content/images/product/gh/
-Telephone1.png" alt="">
-        </a><div class="tooltip" style="z-index: 999; text-align:center;  left: -24.5px; top: -56.5px; padding-top:60px;"><a href="Telephone4008.html">4008业务</a></div>
-    </li>
-    <li>
-        <a href="Telephone30b.html">
-            <img style="z-index: 999; left: 0px; top: 0px; display: block;" src="~/Content/images/product/gh/
-Telephone2.png" alt="">
-        </a><div class="tooltip" style="z-index: 999; text-align:center;  left: -24.5px; top: -56.5px; padding-top:60px;"><a href="Telephone30b.html">30B+D</a></div>
-    </li>
-    <li>
-        <a href="yunxintong.html">
-            <img style="z-index: 999; left: 0px; top: 0px; display: block;" src="~/Content/images/product/gh/
-yxt.png" alt="">
-        </a><div class="tooltip" style="z-index: 999; text-align:center;  left: -24.5px; top: -56.5px; padding-top:60px;"><a href="yunxintong.html">云信通</a></div>
-    </li>
-    <li>
-        <a href="wusheng.html">
-            <img style="z-index: 999; left: 0px; top: 0px; display: block;" src="~/Content/images/product/gh/
-wudh.png" alt="">
-        </a><div class="tooltip" style="z-index: 999; text-align:center;  left: -24.5px; top: -56.5px; padding-top:60px;"><a href="wusheng.html">无绳电话</a></div>
-    </li>
-</ul>
+<div id="div_Product">
+    <ul id="orbs" class="bubblewrap clearfix">
+        <li>
+            <a href="#">
+                <img style="z-index: 999; left: 0px; top: 0px; display: block;" src="~/Content/images/product/gh/
+Telephone1.png" alt="" onclick="MakeHtml('电话4008业务', '/Shared/xml/xmlPath.xml', '首页', '电话4008业务')">
+            </a><div class="tooltip" style="z-index: 999; text-align:center;  left: -24.5px; top: -56.5px; padding-top:60px;"><a href="Telephone4008.html">4008业务</a></div>
+        </li>
+        <li>
+            <a href="#">
+                <img style="z-index: 999; left: 0px; top: 0px; display: block;" src="~/Content/images/product/gh/
+Telephone2.png" alt="" onclick="MakeHtml('移动30BD', '/Shared/xml/xmlPath.xml', '首页', '移动30BD')">
+            </a><div class="tooltip" style="z-index: 999; text-align:center;  left: -24.5px; top: -56.5px; padding-top:60px;"><a href="Telephone30b.html">30B+D</a></div>
+        </li>
+        <li>
+            <a href="#">
+                <img style="z-index: 999; left: 0px; top: 0px; display: block;" src="~/Content/images/product/gh/
+yxt.png" alt="" onclick="MakeHtml('云信通', '/Shared/xml/xmlPath.xml', '首页', '云信通')">
+            </a><div class="tooltip" style="z-index: 999; text-align:center;  left: -24.5px; top: -56.5px; padding-top:60px;"><a href="yunxintong.html">云信通</a></div>
+        </li>
+        <li>
+            <a href="#">
+                <img style="z-index: 999; left: 0px; top: 0px; display: block;" src="~/Content/images/product/gh/
+wudh.png" alt="" onclick="MakeHtml('无绳电话', '/Shared/xml/xmlPath.xml', '首页', '无绳电话')">
+            </a><div class="tooltip" style="z-index: 999; text-align:center;  left: -24.5px; top: -56.5px; padding-top:60px;"><a href="wusheng.html">无绳电话</a></div>
+        </li>
+    </ul>
+</div>

@@ -268,3 +268,140 @@ function loadXMLDoc(xml_name) {
     return xmlDoc;
 
 }
+
+
+
+//input the html content into a div element or other containers
+function MakeHtml(productName, xmlFilePath, RootNode, strFieldName) {
+   // test();
+    var strHtml = "";
+    var strImgPath = "";
+    strHtml += "<ul id=\"orbs\" class=\"bubblewrap clearfix\">";
+    var productObject = getPath(productName, xmlFilePath, RootNode);
+    var ProductObj = productObject[2];
+    DrawPath(productObject[0], "div_CurrentLocation");
+    //the childNode is stored in the subItem label, tracking the SubItem array to retrive its child nodes.
+
+    var SubProductObj = new Object();
+    //alert(ProductObj.getElementsByTagName("SubItems"));
+    if (NodeHasChild(ProductObj)) {
+        strFieldName = "SubItems"
+        SubProductObj = getNodeValue(ProductObj.childNodes[0], strFieldName)["nodeObj"];
+    }
+    else {
+        SubProductObj = ProductObj;
+    }
+    for (var iCount = 0; iCount < SubProductObj.childNodes.length; iCount++) {
+        if (SubProductObj.childNodes[iCount].childNodes[0].nodeType != 3) {
+            nodeObj = SubProductObj.childNodes[iCount].childNodes[0];
+            strHtml = DrawHtml(nodeObj, strHtml);
+        }
+        else  //if (SubProductObj.childNodes[iCount].nodeType == 3)  the node is leaf node
+        {
+            nodeObj = SubProductObj.childNodes[0];
+            $.ajax({
+                url: getNodeValue(nodeObj, "WebUrl")["nodeText"],
+                dataType: 'html',
+                success: function (data) {
+
+                    document.getElementById("div_Product").innerHTML = data;
+                }
+            });
+
+        }
+    }
+
+    document.getElementById("div_Product").innerHTML = strHtml;
+
+
+}
+
+
+//true: has child  false: no child
+function NodeHasChild(NodeObj) {
+    
+    var rv = false;
+    if (NodeObj != null)
+    {
+        for (var i = 0; i < NodeObj.childNodes.length; i++) {
+            if (NodeObj.childNodes[i].nodeName == "SubItems") {
+                rv = true;
+                break;
+            }
+        }
+    }
+    return rv;
+}
+
+
+
+function DrawPath(strPath, strDiv) {
+    var strRV = "你现在的位置是："; // return value.
+
+    var strFullPath = "首页-" + strPath.replace(/-SubItems/g, "");
+    strArray = strFullPath.split("-");
+    for (var i = 0; i < strArray.length; i++) {
+        if (strArray[i] == "首页")
+        {
+            strRV += "<a class=\"gold\" href=\"#\" onclick=\"LinkDirect(\'/home/index\',\'index\')\">" + strArray[i] + "</a>";
+        }
+        else if (strArray[i] == "产品介绍")
+        {
+            strRV += "<a class=\"gold\" href=\"#\"" + strArray[i] + "</a>";
+        }
+        else
+        {
+            strRV += "<a class=\"gold\" href=\"#\" onclick = \"MakeHtml(\'" + strArray[i] + "\', \'/Shared/xml/xmlPath.xml\', \'首页\', \'" + strArray[i] + "\')\">" + strArray[i] + "</a>";
+        }
+        if (i != strArray.length - 1)
+            strRV += " > ";
+    }
+    document.getElementById(strDiv).innerHTML = strRV; //div_CurrentLocation
+}
+
+
+//acquire node value according to field name;
+//field name: eg-ImgUrl..
+function getNodeValue(nodeObj, fieldname) {
+    var returnValue = Array();
+    while (nodeObj != null || typeof (nodeObj) != "undefined") {
+        if (nodeObj.nodeName == fieldname) {
+            returnValue["nodeObj"] = nodeObj;
+            returnValue["nodeText"] = nodeObj.nodeTypedValue;
+            break;
+        }
+        else {
+            nodeObj = nodeObj.nextSibling;
+        }
+    }
+    return returnValue;
+
+}
+
+
+function DrawHtml(nodeObj, strHtml) {
+    //1.Formating
+    //strImgPath = nodeObj.ImageUrl; //image url
+    strHtml += "<li>";
+    strHtml += "<a href='#'>";
+    strHtml += "<img style='z-index: 999; left: 0px; top: 0px; display: block;'";
+    strHtml += "src='/" + getNodeValue(nodeObj, "ImageUrl")["nodeText"] + "' alt=\"\" onclick=\"MakeHtml(\'" + getNodeValue(nodeObj, "Name")["nodeText"] + "\', \'/Shared/xml/xmlPath.xml\', \'首页\',\'" + getNodeValue(nodeObj, "Name")["nodeText"] + "\')\">";
+    //strHtml += "src='/" + getNodeValue(nodeObj, "ImageUrl")["nodeText"] + "' alt=\"\" onclick=\"MakeHtml(\'" + getNodeValue(nodeObj, "Name")["nodeText"] + "\', \'/Shared/xml/xmlPath.xml\', \'首页\',\'SubItems\')\">";
+
+    strHtml += "</a>"
+    strHtml += "<div class=\"tooltip\" style=\"z-index: 999; text-align:center;  left: -24.5px; top: -56.5px; padding-top:60px;\">";
+    strHtml += "<a href=\"#\" ";
+    // strHtml += getNodeValue(nodeObj, "WebUrl")["nodeText"];  //web html url
+    strHtml += "\">" + getNodeValue(nodeObj, "Name")["nodeText"] + "</div>";
+    /*<div class="tooltip" style="z-index: 999; text-align:center;  left: -24.5px; top: -56.5px; padding-top:60px;">
+        <a href="productzx.html">专线业务</a>
+    </div>*/
+    return strHtml;
+}
+
+function LinkDirect(linkAddress, linkName)
+{
+
+    window.location.href = linkAddress;
+
+}

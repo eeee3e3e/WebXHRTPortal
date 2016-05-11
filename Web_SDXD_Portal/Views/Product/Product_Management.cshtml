@@ -1,20 +1,24 @@
-﻿<div class=" clearfix rightTitle">
+﻿<script type="text/javascript" src="~/js/jquery.js"></script>
+<script type="text/javascript" src="~/Shared/javascript/XmlOp.js"></script>
+<div class=" clearfix rightTitle">
     <h2 class="left">产品介绍 PRODUCTS</h2>
-    <div class="right location">你现在的位置是： <a class="gold" href="index.html">首页</a> > <a class="gold" href="product.html">产品介绍</a> > <span class="lightGrey">管理软件</span></div>
+    <div id="div_CurrentLocation" class="right location">你现在的位置是： <a class="gold" href="index.html">首页</a> > <a class="gold" href="product.html">产品介绍</a> > <span class="lightGrey">管理软件</span></div>
 </div>
-<ul id="orbs" class="bubblewrap clearfix">
+<div id="div_Product">
+    <ul id="orbs" class="bubblewrap clearfix">
 
-    <li>
-        <a href="CloudServing.html">
-            <img style="z-index: 999; left: 0px; top: 0px; display: block;" src="~/Content/images/product/IDC/
-CLOUDSERVING.png" alt="">
-        </a><div class="tooltip" style="z-index: 999; text-align:center;  left: -24.5px; top: -56.5px; padding-top:60px;"><a href="CloudServing.html">云服务</a></div>
-    </li>
+        <li>
+            <a href="#">
+                <img style="z-index: 999; left: 0px; top: 0px; display: block;" src="~/Content/images/product/IDC/
+CLOUDSERVING.png" alt="" onclick="MakeHtml('云服务', '/Shared/xml/xmlPath.xml', '首页', '云服务')">
+            </a><div class="tooltip" style="z-index: 999; text-align:center;  left: -24.5px; top: -56.5px; padding-top:60px;"><a href="CloudServing.html">云服务</a></div>
+        </li>
 
-    <li>
-        <a href="wzhgt.html">
-            <img style="z-index: 999; left: 0px; top: 0px; display: block;" src="~/Content/images/product/zenzhi/
-qianming.png" alt="">
-        </a><div class="tooltip" style="z-index: 999; text-align:center;  left: -24.5px; top: -56.5px; padding-top:60px;"><a href="wzhgt.html">电子签名系统</a></div>
-    </li>
-</ul>
+        <li>
+            <a href="#">
+                <img style="z-index: 999; left: 0px; top: 0px; display: block;" src="~/Content/images/product/zenzhi/
+qianming.png" alt="" onclick="MakeHtml('电子签名系统', '/Shared/xml/xmlPath.xml', '首页', '电子签名系统')">
+            </a><div class="tooltip" style="z-index: 999; text-align:center;  left: -24.5px; top: -56.5px; padding-top:60px;"><a href="wzhgt.html">电子签名系统</a></div>
+        </li>
+    </ul>
+</div>

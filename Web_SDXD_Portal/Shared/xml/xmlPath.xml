@@ -1,9 +1,10 @@
 <首页>
-  <产品>
+  <产品介绍>
     <数据业务>
       <专线业务>
-          <WebUrl></WebUrl>
-          <ImageUrl></ImageUrl>
+          <Name></Name>
+          <WebUrl>#</WebUrl>
+          <ImageUrl>Content\images\product\Internet\network.png</ImageUrl>
           <SubItems>
             <互联网专线>
               <Name>互联网专线</Name>
@@ -47,7 +48,7 @@
             </基于互联网增值业务>
             <以太网>
                 <Name>以太网</Name>
-                <WebUrl>#</WebUrl>
+                <WebUrl>\Content\subHtml\product\Internet\Promotion\videoConference\videoconference.txt</WebUrl>
                 <ImageUrl>Content\images\product\Internet\ytw.png</ImageUrl>
             </以太网>
         </SubItems>
@@ -59,7 +60,8 @@
       </IDC业务>
     </数据业务>
     <语音业务>
-      <WebUrl></WebUrl>
+      <Name></Name>
+      <WebUrl>#</WebUrl>
       <ImageUrl></ImageUrl>
       <SubItems>
         <电话4008业务>
@@ -100,5 +102,5 @@
         </电子签名系统>
       </SubItems>
     </管理软件>
-  </产品>
+  </产品介绍>
 </首页>

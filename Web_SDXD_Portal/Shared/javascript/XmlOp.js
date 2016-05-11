@@ -158,7 +158,7 @@ function getPath(linkID, xmlFilePath, RootNode)
 
             for (var iNum = 0; iNum < childNodes.length; iNum++) {
                 if (childNodes[iNum].nodeName == linkID) {
-                    strPath = PathMaker(childNodes[iNum], strPath, "");
+                    strPath = PathMaker(childNodes[iNum], strPath, linkID);
                     returnValue[0] = strPath; //{strPath,"1"};
                     returnValue[1] = "1"; // result is existed
                     returnValue[2] = childNodes[iNum];  //input node object
@@ -201,7 +201,7 @@ function getPath(linkID, xmlFilePath, RootNode)
 
             for (var iNum = 0; iNum < childNodes.length; iNum++) {
                 if (childNodes[iNum].nodeName == linkID) {
-                    strPath = PathMaker(childNodes[iNum], strPath, "");
+                    strPath = PathMaker(childNodes[iNum], strPath, linkID);
                     returnValue[0] = strPath;//{strPath,"1"};
                     returnValue[1] = "1";
                     returnValue[2] = childNodes[iNum];  //input node object

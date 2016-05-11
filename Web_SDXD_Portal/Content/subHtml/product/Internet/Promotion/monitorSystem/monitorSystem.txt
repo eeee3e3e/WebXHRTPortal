@@ -1,0 +1,42 @@
+﻿ <ul class="rightInfor">
+                             <li class="clearfix">
+                                    <span class=" left">产品定义：
+                                    </span>
+                                </li>
+                           <li class="clearfix">
+                                    <span class=" left">&nbsp;&nbsp;监控系统是由摄像、传输、控制、显示、记录登记5大部分组成。摄像机通过同轴视频电缆将视频图像传输到控制主机，控制主机再将视频信号分配到各监视器及录像设备，同时可将需要传输的语音信号同步录入到录像机内。 通过控制主机，操作人员可发出指令，对云台的上、下、左、右的动作进行控制及对镜头进行调焦变倍的操作，并可通过控制主机实现在多路摄像机及云台之间的切换。利用特殊的录像处理模式，可对图像进行录入、回放、处理等操作，使录像效果达到最佳。
+                                    </span>
+                                </li>
+                <li class="clearfix">
+                                    <span class=" left">主要功能：                          
+                                    </span>
+                                </li>
+                                <li class="clearfix">
+                                    <span class=" left">&nbsp;&nbsp;1、本地录像，保存一定时间段内的本地视频监控录像资料，并能方便地查询、取证，为事后调查提供依据。
+                                    </span>
+                                </li>
+                                <li class="clearfix">
+                                    <span class=" left">&nbsp;&nbsp;2、视频监控系统为生产带来方便，最基本的如在一些较为恶劣的环境下，视频惊恐可以代替人力进行监视控制，他体积小，工作稳定，能够保证安全。而且他不会产生人出现的视觉疲劳等生理缺陷，正常情况下保证成产安全。
+                                    </span>
+                                </li>
+                                 <li class="clearfix">
+                                    <span class=" left">&nbsp;&nbsp;3、视频监控给生活带来方便，比如在交通监控方面，及时准确监控范围广，可以保证在交通堵塞，事故中第一时间通知交警，解决问题。
+                                    </span>
+                                </li>
+                                 <li class="clearfix">
+                                    <span class=" left">&nbsp;&nbsp;4、视频监控保证治安问题，将系统安装在超市，银行，厂房，施工地点等，了解室内情况，顾客行为，有效保障银行持卡人的权益，监控厂房运行情况，提高社会安全保障水平。
+                                    </span>
+                                </li>
+                                 <li class="clearfix">
+                                    <span class=" left">&nbsp;&nbsp;
+                                    </span>
+                                </li>
+                                <li class="clearfix">
+                                    <span class=" left">&nbsp;&nbsp;如果您想了解更多内容或有意向办理业务请联系我们的销售。
+                                    </span>
+                                </li>
+                                 <li class="clearfix">
+                                    <span class=" left">&nbsp;&nbsp;销售电话：
+                                    </span>
+                                </li>
+                            </ul>

@@ -1,0 +1,26 @@
+﻿<ul class="rightInfor">
+                             <li class="clearfix">
+                                    <span class=" left">&nbsp;&nbsp;
+                             无线局域网（WLAN）技术于20世纪90年代逐步成熟并投入商用，既可以作传统有线网络的延伸，在某些环境也可以替代传统的有线网络。对比传统的有线传输解决方案，使用WLAN网络实现数据传输具有以下显著特点：
+                                    </span>
+                                </li>
+                           <li class="clearfix">
+                                    <span class=" left">&nbsp;&nbsp;
+                                    简易性：WLAN网络传输系统的安装快速简单，可极大的减少敷设管道及布线等繁琐工作。
+                                    </span>
+                                </li>
+                <li class="clearfix">
+                                    <span class=" left">&nbsp;&nbsp;
+                           灵活性：无线技术使得WLAN设备可以灵活的进行安装并调整位置，使无线网络达到有线网络不易覆盖的区域。
+                                    </span>
+                                </li>
+                                <li class="clearfix">
+                                    <span class=" left">&nbsp;&nbsp;综合成本较低：一方面WLAN网络减少了布线的费用，另一方面在需要频繁移动和变化的动态环境中，无线局域网技术可以更好地保护已有投资。同时，由于WLAN技术本身就是面向数据通信领域的IP传输技术，因此可直接通过百兆自适应网口和企业内部Intranet相连，从体系结构上节省了协议转换器等相关设备。
+                                    </span>
+                                </li>
+                                <li class="clearfix">
+                                    <span class=" left">&nbsp;&nbsp;
+                           扩展能力强：WLAN网络系统支持多种拓扑结构及平滑扩容，可以十分容易地从小容量传输系统平滑扩展为中等容量传输系统。
+                                    </span>
+                                </li>
+                            </ul>

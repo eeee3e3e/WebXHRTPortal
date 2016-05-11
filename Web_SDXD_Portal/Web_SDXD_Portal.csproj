@@ -187,6 +187,17 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\images\location.png" />
+    <Content Include="Content\subHtml\product\Internet\dianxin\zx_dianxin.txt" />
+    <Content Include="Content\subHtml\product\Internet\IDC\IDC.txt" />
+    <Content Include="Content\subHtml\product\Internet\Promotion\monitorSystem\monitorSystem.txt" />
+    <Content Include="Content\subHtml\product\Internet\Promotion\videoConference\videoconference.txt" />
+    <Content Include="Content\subHtml\product\Internet\Promotion\wifi_cover\wifi_cover.txt" />
+    <Content Include="Content\subHtml\product\management\cloudService\cloudService.txt" />
+    <Content Include="Content\subHtml\product\management\electricalSign\electricalSign.txt" />
+    <Content Include="Content\subHtml\product\voice\30BD\30BD.txt" />
+    <Content Include="Content\subHtml\product\voice\4008\4008.txt" />
+    <Content Include="Content\subHtml\product\voice\wirelessTele\wireless.txt" />
+    <Content Include="Content\subHtml\product\voice\yunxintong\yunxintong.txt" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -345,7 +356,7 @@
     <Content Include="Views\JoinUs\Join_Job.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\subHtml\zx_liantong.txt" />
+    <Content Include="Content\subHtml\product\Internet\liantong\zx_liantong.txt" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />

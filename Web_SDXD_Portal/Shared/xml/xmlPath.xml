@@ -8,60 +8,97 @@
             <互联网专线>
               <Name>互联网专线</Name>
               <WebUrl>#</WebUrl>
-              <ImageUrl>network.png</ImageUrl>
+              <ImageUrl>Content\images\product\Internet\hlwjr.png</ImageUrl>
               <SubItems>
                 <中国联通专线>
                   <Name>中国联通专线</Name>
-                  <WebUrl>#</WebUrl>
+                  <WebUrl>/Content/subHtml/product/Internet/liantong/zx_liantong.txt</WebUrl>
                   <ImageUrl>Content/images/product/Internet/liantong.png</ImageUrl>
                 </中国联通专线>
 
                 <中国电信专线>
                   <Name>中国电信专线</Name>
-                  <WebUrl>#</WebUrl>
+                  <WebUrl>/Content/subHtml/product/Internet/dianxin/zx_dianxin.txt</WebUrl>
                   <ImageUrl>Content/images/product/Internet/dianxin.png</ImageUrl>
                 </中国电信专线>
               </SubItems>
             </互联网专线>
             <基于互联网增值业务>
-              <WebUrl></WebUrl>
-              <ImageUrl></ImageUrl>
+              <Name>基于互联网增值业务</Name>
+              <WebUrl>#</WebUrl>
+              <ImageUrl>Content\images\product\gh\hlw.png</ImageUrl>
               <SubItems>
                   <wifi覆盖>
-                    <Name></Name>
-                    <WebUrl></WebUrl>
-                    <ImageUrl></ImageUrl>
+                    <Name>wifi覆盖</Name>
+                    <WebUrl>\Content\subHtml\product\Internet\Promotion\wifi_cover\wifi_cover.txt</WebUrl>
+                    <ImageUrl>Content\images\product\Internet\wifi.png</ImageUrl>
                   </wifi覆盖>
                   <视频会议>
-                    <Name></Name>
-                    <WebUrl></WebUrl>
-                    <ImageUrl></ImageUrl>
+                    <Name>视频会议</Name>
+                    <WebUrl>\Content\subHtml\product\Internet\Promotion\videoConference\videoconference.txt</WebUrl>
+                    <ImageUrl>Content\images\product\Internet\videoconference.png</ImageUrl>
                   </视频会议>
                   <监控系统>
-                    <Name></Name>
-                    <WebUrl></WebUrl>
-                    <ImageUrl></ImageUrl>
+                    <Name>监控系统</Name>
+                    <WebUrl>\Content\subHtml\product\Internet\Promotion\monitorSystem\monitorSystem.txt</WebUrl>
+                    <ImageUrl>Content\images\product\Internet\jkxt.png</ImageUrl>
                   </监控系统>
               </SubItems>
             </基于互联网增值业务>
             <以太网>
-                <WebUrl></WebUrl>
-                <ImageUrl></ImageUrl>
+                <Name>以太网</Name>
+                <WebUrl>#</WebUrl>
+                <ImageUrl>Content\images\product\Internet\ytw.png</ImageUrl>
             </以太网>
         </SubItems>
       </专线业务>
       <IDC业务>
-        <WebUrl></WebUrl>
-        <ImageUrl></ImageUrl>
+        <Name>IDC业务</Name>
+        <WebUrl>\Content\subHtml\product\Internet\IDC\IDC.txt</WebUrl>
+        <ImageUrl>Content\images\product\IDC\IDC.png</ImageUrl>
       </IDC业务>
     </数据业务>
     <语音业务>
       <WebUrl></WebUrl>
       <ImageUrl></ImageUrl>
+      <SubItems>
+        <电话4008业务>
+          <Name>电话4008业务</Name>
+          <WebUrl>\Content\subHtml\product\voice\4008\4008.txt</WebUrl>
+          <ImageUrl>Content\images\product\gh\Telephone1.png</ImageUrl>
+        </电话4008业务>
+        <移动30BD>
+          <Name>以太网</Name>
+          <WebUrl>\Content\subHtml\product\voice\30BD\30BD.txt</WebUrl>
+          <ImageUrl>Content\images\product\gh\Telephone2.png</ImageUrl>
+        </移动30BD>
+        <云信通>
+          <Name>云信通</Name>
+          <WebUrl>\Content\subHtml\product\voice\yunxintong\yunxintong.txt</WebUrl>
+          <ImageUrl>Content\images\product\gh\yun.png</ImageUrl>
+        </云信通>
+        <无绳电话>
+          <Name>无绳电话</Name>
+          <WebUrl>\Content\subHtml\product\voice\wirelessTele\wireless.txt</WebUrl>
+          <ImageUrl>Content\images\product\gh\wudh.png</ImageUrl>
+        </无绳电话>
+      </SubItems>
     </语音业务>
     <管理软件>
       <WebUrl></WebUrl>
       <ImageUrl></ImageUrl>
+      <SubItems>
+        <云服务>
+          <Name>云服务</Name>
+          <WebUrl>\Content\subHtml\product\management\cloudService\cloudService.txt</WebUrl>
+          <ImageUrl>Content\images\product\IDC\CLOUDSERVING.png</ImageUrl>
+        </云服务>
+        <电子签名系统>
+          <Name>电子签名系统</Name>
+          <WebUrl>\Content\subHtml\product\management\electricalSign\electricalSign.txt</WebUrl>
+          <ImageUrl>Content\images\product\zenzhi\qianming.png</ImageUrl>
+        </电子签名系统>
+      </SubItems>
     </管理软件>
   </产品>
 </首页>
